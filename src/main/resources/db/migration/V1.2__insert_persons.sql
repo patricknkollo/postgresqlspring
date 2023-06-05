@@ -1,0 +1,1 @@
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('aliko', 'dangote', 58, 13, 'mrd', 'nigeria' );
