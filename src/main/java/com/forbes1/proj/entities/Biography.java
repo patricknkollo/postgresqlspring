@@ -8,17 +8,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-//@Builder
-public class Person {
+public class Biography {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer personid;
-    private String prenom;
+    private Integer biographyid;
     private String nom;
-    private Integer age;
+    private String prenom;
 
-    private String networth;
-    private String unite;
-    private String pays;
+    @Column(columnDefinition="TEXT", length = 2000)
+    private String biography;
+    private Integer personid;
 }
