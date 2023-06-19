@@ -20,4 +20,6 @@ public interface BillionaireBiographyRepository extends JpaRepository<Biography,
             " FROM Person JOIN Biography ON person.personid = Biography.personid" +
             " WHERE person.personid = :id", nativeQuery = true)
     public Optional<DescriptedBillionaire> findBiographyByBillionaireid(@Param("id") Integer billid);
+
+    public Optional<DescriptedBillionaire> findBiographyByBillionaire();
 }
