@@ -19,7 +19,7 @@ public class PersonService {
     @Autowired
     private PersonRepository repository;
 
-    //@Cacheable
+    @Cacheable("person")
     public ResponseEntity<List<Person>> getAllEmployeurs(){
         logger.info("this is from the database !!!");
         return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
