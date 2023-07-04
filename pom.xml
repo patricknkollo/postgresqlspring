@@ -130,6 +130,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>proj</finalName>
 	</build>
 
 </project>
