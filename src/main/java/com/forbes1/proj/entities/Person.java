@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,9 +18,9 @@ public class Person {
     private Integer personid;
     private String prenom;
     private String nom;
-    private Integer age;
+    private LocalDate age;
 
-    private String networth;
+    private int networth;
     private String unite;
     private String pays;
 }
