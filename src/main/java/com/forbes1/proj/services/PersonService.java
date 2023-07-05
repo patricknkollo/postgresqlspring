@@ -35,7 +35,7 @@ public class PersonService {
     @Cacheable("person")
     public ResponseEntity<List<Person>> getAllEmployeurs(){
         logger.info("this is from the database !!!");
-        return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(repository.findAll(Sort.by(Sort.Direction.DESC, "networth")), HttpStatus.OK);
     }
 
     public ResponseEntity<List<Person>> getAllEmployeursByCountry(String country){
