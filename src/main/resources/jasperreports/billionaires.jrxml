@@ -9,8 +9,8 @@
 	<field name="personid" class="java.lang.Integer"/>
 	<field name="prenom" class="java.lang.String"/>
 	<field name="nom" class="java.lang.String"/>
-	<field name="age" class="java.lang.Integer"/>
-	<field name="networth" class="java.lang.String"/>
+	<field name="age" class="java.lang.String"/>
+	<field name="networth" class="java.lang.Integer"/>
 	<field name="unite" class="java.lang.String"/>
 	<field name="pays" class="java.lang.String"/>
 	<background>
@@ -28,7 +28,7 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="71" splitType="Stretch">
+		<band height="60" splitType="Stretch">
 			<textField>
 				<reportElement x="460" y="30" width="100" height="30" uuid="44050d29-fb04-4025-a543-eb8dcc2980d6"/>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yy").format(new Date())]]></textFieldExpression>

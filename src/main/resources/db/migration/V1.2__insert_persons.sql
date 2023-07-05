@@ -141,3 +141,58 @@ INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('jorge paul
 INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('kumar', 'birla', '1970-09-18', 15, 'mrd', 'india' );
 INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('david', 'green', '1970-09-18', 15, 'mrd', 'usa' );
 
+
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('dhanin', 'chearavanont', '1939-04-19', 15, 'mrd', 'thailand' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('huang', 'shilin', '1967-01-01', 14, 'mrd', 'china' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Charlene', 'Charlene de Carvalho-Heineken', '1954-06-30', 14, 'mrd', 'netherlands' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Alisher', 'Usmanov', '1953-09-09', 14, 'mrd', 'russia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('jan', 'koum', '1976-02-24', 14, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Laurene', 'Powell Jobs ', '1963-11-06', 14, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('uday', 'kotak', '1959-03-15', 14, 'mrd', 'india' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('lui', 'che woo', '1929-08-09', 13, 'mrd', 'hong kong' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Ricardo', 'Salinas Pliego', '1955-10-19', 13, 'mrd', 'mexico' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Kwong', 'Siu-hing', '1970-12-02', 13, 'mrd', 'hong kong' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Lu', 'Xiangyang', '1962-01-01', 13, 'mrd', 'china' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('idan', 'ofer', '1955-10-02', 13, 'mrd', 'israel' );
+
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('xu', 'hang', '1967-01-01', 13, 'mrd', 'hong kong' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('jerry', 'jones', '1942-10-13', 13, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('joseph', 'lau', '1951-07-21', 13, 'mrd', 'hong kong' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('john', 'fredriksen', '1944-05-10', 13, 'mrd', 'cyprus' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('goh', 'cheng liang', '1928-01-01', 13, 'mrd', 'singapore' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Charoen', 'Sirivadhanabhakdi', '1944-05-02', 13, 'mrd', 'thailand' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('George', 'Kaiser', '1943-10-30', 12, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Stanley', 'Kroenke', '1947-07-29', 12, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Dustin', 'Moskovitz', '1984-05-22', 12, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Mikhail', 'Fridman', '1964-04-21', 12, 'mrd', 'russia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Giorgio', 'Armani', '1934-04-11', 12, 'mrd', 'italy' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('david', 'duffield', '1941-01-01', 12, 'mrd', 'usa' );
+
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Vinod', 'Adani', '1949-01-01', 12, 'mrd', 'cyprus' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Wei', 'Jianjun', '1964-01-01', 12, 'mrd', 'china' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Shahid', 'Khan', '1950-07-18', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Stephen', 'Ross', '1940-05-10', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Kushal', 'Pal Singh', '1931-11-15', 11, 'mrd', 'india' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Pang', 'Kang', '1956-01-01', 11, 'mrd', 'china' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('John', 'Doerr', '1951-07-29', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Pavel', 'Durov', '1984-10-10', 11, 'mrd', 'united arab emirates' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('michael', 'rubin', '1972-07-21', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Viatcheslav', 'Kantor', '1953-09-08', 11, 'mrd', 'russia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Mike', 'Cannon-Brookes', '1979-10-17', 11, 'mrd', 'australia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Mikhail', 'Prokhorov', '1965-05-03', 11, 'mrd', 'russia' );
+
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Christy', 'Walton', '1949-02-08', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Israel', 'Englander', '1948-01-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Trudy', 'Cathy White', '1956-01-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Dan', 'Cathy', '1953-03-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Bubba', 'Cathy', '1953-01-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('nicolas', 'puech', '1943-01-29', 11, 'mrd', 'france' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Zhang', 'Zhidong', '1972-01-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Donald', 'Newhouse', '1929-01-01', 11, 'mrd', 'usa' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Robert', 'Kuok', '1923-10-06', 11, 'mrd', 'malaysia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Scott', 'Farquhar', '1979-12-01', 11, 'mrd', 'australia' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Sun', 'Piaoyang', '1958-01-01', 10, 'mrd', 'china' );
+INSERT INTO Person (prenom, nom, age, networth, unite, pays) VALUES ('Anthony', 'Pratt', '1960-04-11', 10, 'mrd', 'australia' );
+
+
+

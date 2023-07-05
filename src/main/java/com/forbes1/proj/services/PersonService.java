@@ -1,6 +1,7 @@
 package com.forbes1.proj.services;
 
 import com.forbes1.proj.entities.Person;
+import com.forbes1.proj.entities.PersonWithIntAge;
 import com.forbes1.proj.repositories.PersonRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -17,6 +18,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +53,7 @@ public class PersonService {
         return new ResponseEntity<>(repository.selectAfrica(), HttpStatus.OK);
     }
 
-    public ResponseEntity<byte[]> getPersonReport() throws FileNotFoundException, JRException {
+    public ResponseEntity<byte[]> getPersonReport2() throws FileNotFoundException, JRException {
         List<Person>billionaires = repository.findAll(Sort.by(Sort.Direction.ASC, "personid"));
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionaires);
         Map<String, Object> empParams = new HashMap<>();
@@ -71,9 +75,61 @@ public class PersonService {
                 (JasperExportManager.exportReportToPdf(empReport), headers, HttpStatus.OK);
     }
 
+    public ResponseEntity<byte[]> getPersonReport() throws FileNotFoundException, JRException {
+        List<PersonWithIntAge> billionairesWithIntAge = new ArrayList<>();
+        List<Person>billionaires = repository.findAll(Sort.by(Sort.Direction.ASC, "personid"));
+        billionaires.forEach(
+                billionaire ->{
+                    PersonWithIntAge personWithIntAge = new PersonWithIntAge();
+                    personWithIntAge.setAge(String.valueOf(Period.between(billionaire.getAge(), LocalDate.now()).getYears()));
+                    personWithIntAge.setNom(billionaire.getNom());
+                    personWithIntAge.setPays(billionaire.getPays());
+                    personWithIntAge.setPrenom(billionaire.getPrenom());
+                    personWithIntAge.setPersonid(billionaire.getPersonid());
+                    personWithIntAge.setNetworth(billionaire.getNetworth());
+                    personWithIntAge.setUnite(billionaire.getUnite());
+
+                    billionairesWithIntAge.add(personWithIntAge);
+                }
+        );
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionairesWithIntAge);
+        Map<String, Object> empParams = new HashMap<>();
+        JasperPrint empReport =
+                JasperFillManager.fillReport
+                        (
+                                JasperCompileManager.compileReport(
+                                        ResourceUtils.getFile("classpath:jasperreports/billionaires.jrxml")
+                                                .getAbsolutePath()) // path of the jasper report
+                                , empParams // dynamic parameters
+                                , dataSource
+                        );
+        HttpHeaders headers = new HttpHeaders();
+        //set the PDF format
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("filename", "forbes.pdf");
+        //create the report in PDF format
+        return new ResponseEntity<byte[]>
+                (JasperExportManager.exportReportToPdf(empReport), headers, HttpStatus.OK);
+    }
+
     public ResponseEntity<byte[]> getTopTenReport() throws FileNotFoundException, JRException {
+        List<PersonWithIntAge> billionairesWithIntAge = new ArrayList<>();
         List<Person>billionaires = repository.findTopTen();
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionaires);
+        billionaires.forEach(
+                billionaire ->{
+                    PersonWithIntAge personWithIntAge = new PersonWithIntAge();
+                    personWithIntAge.setAge(String.valueOf(Period.between(billionaire.getAge(), LocalDate.now()).getYears()));
+                    personWithIntAge.setNom(billionaire.getNom());
+                    personWithIntAge.setPays(billionaire.getPays());
+                    personWithIntAge.setPrenom(billionaire.getPrenom());
+                    personWithIntAge.setPersonid(billionaire.getPersonid());
+                    personWithIntAge.setNetworth(billionaire.getNetworth());
+                    personWithIntAge.setUnite(billionaire.getUnite());
+
+                    billionairesWithIntAge.add(personWithIntAge);
+                }
+        );
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionairesWithIntAge);
         Map<String, Object> empParams = new HashMap<>();
         JasperPrint empReport =
                 JasperFillManager.fillReport
@@ -94,8 +150,23 @@ public class PersonService {
     }
 
     public ResponseEntity<byte[]> getAfricansForbesReport() throws FileNotFoundException, JRException {
+        List<PersonWithIntAge> billionairesWithIntAge = new ArrayList<>();
         List<Person>billionaires = repository.selectAfrica();
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionaires);
+        billionaires.forEach(
+                billionaire ->{
+                    PersonWithIntAge personWithIntAge = new PersonWithIntAge();
+                    personWithIntAge.setAge(String.valueOf(Period.between(billionaire.getAge(), LocalDate.now()).getYears()));
+                    personWithIntAge.setNom(billionaire.getNom());
+                    personWithIntAge.setPays(billionaire.getPays());
+                    personWithIntAge.setPrenom(billionaire.getPrenom());
+                    personWithIntAge.setPersonid(billionaire.getPersonid());
+                    personWithIntAge.setNetworth(billionaire.getNetworth());
+                    personWithIntAge.setUnite(billionaire.getUnite());
+
+                    billionairesWithIntAge.add(personWithIntAge);
+                }
+        );
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(billionairesWithIntAge);
         Map<String, Object> empParams = new HashMap<>();
         JasperPrint empReport =
                 JasperFillManager.fillReport
