@@ -20,10 +20,7 @@ import org.springframework.util.ResourceUtils;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class PersonService {
@@ -40,17 +37,23 @@ public class PersonService {
 
     public ResponseEntity<List<Person>> getAllEmployeursByCountry(String country){
         logger.info("this is from the database !!!");
-        return new ResponseEntity<>(repository.findPersonByCountry(country), HttpStatus.OK);
+        List<Person> persons = repository.findPersonByCountry(country);
+        persons.sort(Comparator.comparing(Person::getNetworth, Comparator.reverseOrder()));
+        return new ResponseEntity<>(persons, HttpStatus.OK);
     }
 
     public ResponseEntity<List<Person>> getAllTopTenEmployeurs(){
         logger.info("this is from the database !!!");
-        return new ResponseEntity<>(repository.findTopTen(), HttpStatus.OK);
+        List<Person> persons = repository.findTopTen();
+        persons.sort(Comparator.comparing(Person::getNetworth, Comparator.reverseOrder()));
+        return new ResponseEntity<>(persons, HttpStatus.OK);
     }
 
     public ResponseEntity<List<Person>> getAllAfricansBillionaires(){
         logger.info("this is from the database !!!");
-        return new ResponseEntity<>(repository.selectAfrica(), HttpStatus.OK);
+        List<Person> persons = repository.selectAfrica();
+        persons.sort(Comparator.comparing(Person::getNetworth, Comparator.reverseOrder()));
+        return new ResponseEntity<>(persons, HttpStatus.OK);
     }
 
     public ResponseEntity<byte[]> getPersonReport2() throws FileNotFoundException, JRException {
