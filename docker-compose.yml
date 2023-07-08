@@ -17,9 +17,9 @@ services:
     restart: unless-stopped
   # APP*****************************************
   springbootapp:
-    image: pnkollo/proj:latest
+    image: proj:latest
     network_mode: bridge
-    container_name: pnkollo/proj
+    container_name: proj
     expose:
       - 8080
     ports:
