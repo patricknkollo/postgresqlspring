@@ -1,13 +1,10 @@
 version: "3"
 services:
   postgres:
-    image: postgres:latest
-    network_mode: bridge
+    image: postgres:latest   #---------------------------> ca vient de dockerhub
     container_name: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
-    expose:
-      - 5432
     ports:
       - 5432:5432
     environment:
@@ -15,13 +12,13 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
     restart: unless-stopped
+    networks:
+      - proj_network
   # APP*****************************************
   proj:
-    image: proj:latest
-    network_mode: bridge
+    build: .
+    image: 'pnkollo/proj'   #---------------------------> ca vient de dockerhub
     container_name: projcontainer
-    expose:
-      - 8080
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -29,5 +26,20 @@ services:
       - postgres
     links:
       - postgres
+    networks:
+      - proj_network
+
+  forbes:
+    image: 'pnkollo/forbes'      #---------------------------> ca vient de dockerhub
+    container_name: forbes
+    network_mode: host
+
+    restart: unless-stopped
+#    networks:
+#      - proj_network
+
 volumes:
   postgres-data:
+
+networks:
+  proj_network:
