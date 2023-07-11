@@ -32,7 +32,9 @@ services:
   forbes:
     image: 'pnkollo/forbes'      #---------------------------> ca vient de dockerhub
     container_name: forbes
-    network_mode: host
+    ports:
+      - 3000:3000
+   # network_mode: host
 
     restart: unless-stopped
 #    networks:

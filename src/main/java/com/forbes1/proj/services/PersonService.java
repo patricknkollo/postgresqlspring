@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
@@ -188,4 +191,22 @@ public class PersonService {
         return new ResponseEntity<byte[]>
                 (JasperExportManager.exportReportToPdf(empReport), headers, HttpStatus.OK);
     }
+
+  /*  //@Override
+    public void resolveResources(ResourceLoader loader) throws IOException, JRException {
+       // Map<String, Object> map = super.getParams();
+        Map<String, Object> map = new HashMap<>();
+        Map.of(
+                        "EXECUTEMAIN_REPORT", "classpath:templates/orderpackage/orderpackageexecutemain.jrxml",
+                        "HINT_REPORT", "classpath:templates/orderpackage/orderpackagehint.jrxml",
+                        "KW_REPORT", "classpath:templates/orderpackage/orderpackagekw.jrxml",
+                        "PART_REPORT", "classpath:templates/orderpackage/orderpackagepart.jrxml",
+                        "HINT_OVERVIEW_REPORT",
+                        "classpath:templates/orderpackage/orderpackagehintoverview.jrxml")
+                .forEach((key, value) -> PrinterUtil.addParamFromPath(loader, key, value, map));
+        try (InputStream jrxml = loader
+                .getResource("classpath:templates/orderpackage/orderpackage.jrxml").getInputStream()) {
+            super.setReport(JasperCompileManager.compileReport(jrxml));
+        }
+    }*/
 }
