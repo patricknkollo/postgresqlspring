@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "/api/employeur")
+@RequestMapping(path = "/api/employeur" , produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin
 public class PersonController {
 

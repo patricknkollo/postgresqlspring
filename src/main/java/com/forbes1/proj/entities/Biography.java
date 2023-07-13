@@ -1,7 +1,6 @@
 package com.forbes1.proj.entities;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -1,7 +1,6 @@
 package com.forbes1.proj.repositories;
 
 import com.forbes1.proj.entities.Person;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
