@@ -91,7 +91,6 @@ public class PersonControllerMockMvcTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].prenom", Matchers.is("pierrette"))
                 );
 
-
     }
 }
 

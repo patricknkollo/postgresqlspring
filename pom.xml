@@ -85,12 +85,6 @@
 			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!--		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>2.2</version>
-			<scope>test</scope>
-		</dependency>-->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
@@ -119,9 +113,26 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-<!--			<version>4.8.0</version>-->
 		</dependency>
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Optional URL to server. Default value is http://localhost:9000 -->
+				<sonar.host.url> http://localhost:9000 </sonar.host.url>
+
+				  <sonar.jdbc.url>jdbc:postgresql://postgres:5432/postgres</sonar.jdbc.url>
+				<!--<sonar.jdbc.driver>Your database driver</sonar.jdbc.driver>-->
+               <sonar.jdbc.username>postgres</sonar.jdbc.username>
+               <sonar.jdbc.password>post</sonar.jdbc.password>
+
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
